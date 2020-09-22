@@ -37,7 +37,7 @@ const setFilter = (event) => {
         </div>  
         <div id="mySidebar" className="sidebar">
         {
-            useLocation().pathname === '/' ?
+            useLocation().pathname === '/rickandmorty-app' ?
             <>
                 <button id="Characters" onClick={setFilter}>Character</button>
                 <button id="Locations" onClick={setFilter}>Location</button>
