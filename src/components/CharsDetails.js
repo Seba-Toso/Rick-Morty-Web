@@ -1,6 +1,7 @@
 import React from 'react';
 import CharMiniCard from './CharMiniCard'
 
+
 function CharsDetails( {details} ) {
 
     
@@ -25,17 +26,19 @@ return (
                                         <strong>TYPE:</strong> {details.type || 'No info available'} <br/>
                                         <strong>GENDER:</strong> {details.gender || 'No info available'} <br/>
                                     </div> 
-                                    ) : 
-                                    details.dimension? (
-                                        <div> 
-                                            <strong>DIMENSION:</strong> {details.dimension} <br/>
-                                            <strong>TYPE:</strong> {details.type || 'No info available'} <br/>
-                                        </div> 
-                                    ) : 
-                                        <div> 
-                                            <strong>RELEASE DATE:</strong> {details.air_date} <br/>
-                                            <strong>EPISODE:</strong> {details.episode} <br/>
-                                        </div> 
+                                    )
+                                : 
+                                details.dimension? (
+                                    <div> 
+                                        <strong>DIMENSION:</strong> {details.dimension} <br/>
+                                        <strong>TYPE:</strong> {details.type || 'No info available'} <br/>
+                                    </div> 
+                                    ) 
+                                : 
+                                    <div> 
+                                        <strong>RELEASE DATE:</strong> {details.air_date} <br/>
+                                        <strong>EPISODE:</strong> {details.episode} <br/>
+                                    </div> 
                                 }
                             </div>
                             <div className="detailsCol col-8 text-center">
@@ -67,7 +70,6 @@ return (
                                     } 
                                 </div>
                             }
-                            
                             </div>
                         </div>
                     </div>

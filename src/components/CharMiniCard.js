@@ -4,17 +4,9 @@ import React from 'react';
 
 function CharMiniCard({char}) {
 
-if (char === undefined ){ 
-    return  <div className="d-flex justify-content-center">
-                <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
-                </div>
-            </div>
-} 
- 
 return (
     <React.Fragment>
-    {   char.name === null ? <div>No character(s) info</div> 
+    {   char.name === null ? <p>No character(s) info</p> 
         :
         <div className="miniCards card text-dark border-dark mb-3" >
             <div className="card-header" >

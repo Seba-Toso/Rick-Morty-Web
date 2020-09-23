@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 function Error() {
 
 
- 
 return (
     <React.Fragment>
         <div className="errorMsg text-center">

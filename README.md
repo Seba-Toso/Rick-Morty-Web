@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+---
 
-## Available Scripts
+<h6>Hi stranger, I’m Sebastian!</h5>
+<h2>Welcome to this crazy little project! 👉 Rick and Morty Searcher 👈</h2>
+<p>Here you can search and find some information about the show. In a sidebar displayed by clicking or pressing a button in
+the up-left corner, you can active one of the three filters provided that will let you search by characters, locations or episodes. All information can be obtained by entering the name in the input field according to the active filter.</p>
+<br>
+<h4>You can play with it</h4>
+<p>This project is deployed in gh-pages 🙌. <a href="https://seba-toso.github.io/rickandmorty-app/" title="https://seba-toso.github.io/rickandmorty-app/">Here</a></p>
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<h4>Or follow this steps to clone the repository</h4>
+<p>Holt there!👮‍♂️ Before making any move, you need to have installed git and yarn package manager in your PC.<em>(Have the links at the end)</em>
+<ol>
+<li>
+<h6><strong>CLONE</strong></h6><br>
+<p>In your <code>command shell </code>enter <code>$ git clone https://github.com/Seba-Toso/rickandmorty-app.git</code> and then press ENTER.</p>
+</li>
+<li>
+<h6>JUMP INTO THE PROJECT FOLDER</h6><br>
+<code>cd rickandmorty-app</code></p>
+</li>
+<li>
+<h6>INSTALL PACKAGES AND LIBRARIES</h6>
+<code>yarn install</code></p><br>
+</li>
+<h6>START IT UP<h6>
+<code>yarn start</code></p>
+</li>
+</ol>
+<p>That's it, have fun!</p>
+<h2>WOW, I made it!🤯 but, how this thing WORK</h2>
+<p>The web app counts with a home screen and an about page. <br>
+<br>
+<strong>Home Screen</strong><br>
+In the up-left corner have a button that shows a sidebar. In this sidebar you can choose a filter for your searches and go to the about page.<br>
+An input field allows you to enter the name of the character(s), episode(s) or dimension(s) that you want to find. Next to this field, have a start search button and a clear all button that will put all like new.<br>
+When a search is been made, results are shown in a screen below the input field and they are diplayed in cards. Those Cards are clickables and will show you more detail information!.<br>
+And that's it.</p>
+<br>
+<br>
+<p><strong>Live long and prosper</strong> 🖖</p>
+---
+<h6>Git</h6>
+<a href="https://git-scm.com/downloads" title="https://git-scm.com/downloads">git web</a> 
+<h6>Yarn package manager</h6>
+<code>npm install -g yarn</code>
+---
+---

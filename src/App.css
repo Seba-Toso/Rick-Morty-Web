@@ -34,6 +34,7 @@ button:focus, button:active, button:hover {
   display: block;
 }
 
+
 /* Sidebar */
 .sidebar {
   height: 100%;
@@ -47,7 +48,6 @@ button:focus, button:active, button:hover {
   transition: 0.5s;
   padding-top: 60px;
 }
-
 .sidebar button {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -62,7 +62,6 @@ button:focus, button:active, button:hover {
   color: #f1f1f1;
   text-decoration: none;
 }
-
 .openbtn {
   font-size: 20px;
   cursor: pointer;
@@ -74,11 +73,9 @@ button:focus, button:active, button:hover {
   position: fixed;
   z-index: 1;
 }
-
 .openbtn:hover {
   background-color: #444;
 }
-
 #main {
   display: inline;
   transition: margin-left .5s;
@@ -129,6 +126,7 @@ button:focus, button:active, button:hover {
   display: none;
 }
 
+
 /* Card */
 .resCard {
   min-width: 13rem;
@@ -137,21 +135,18 @@ button:focus, button:active, button:hover {
   transition: all 200ms ease-in-out ;
 }
 .resCard:hover {
-  box-shadow: 0 0 0 0.1rem #111;
-  animation: float 4s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 @keyframes float {
 	0% {
-		box-shadow: 0 0 0 0.1rem #111;
-		transform: translatey(0px);
+		transform: translatey(0);
 	}
 	50% {
 		box-shadow: 0 25px 15px 0px#666;
-		transform: translatey(-2%);
+		transform: translatey(-1%);
 	}
 	100% {
-		box-shadow: 0 0 0 0.1rem #111;
-		transform: translatey(0px);
+		transform: translatey(0);
 	}
 }
 .miniCards {
@@ -167,11 +162,11 @@ button:focus, button:active, button:hover {
   padding: 0;
 }
 
+
 /* Details */
 .detailImg {
   border-radius: 5px;
   border: 1px solid #111;
-  
 }
 .modal-lg {
   max-width: 840px;
@@ -183,17 +178,21 @@ button:focus, button:active, button:hover {
   padding-top: 5%;
   padding-bottom: 2%;
 }
-.paginatorBtn {
-  background: #444;
-  border: none;
-  width: 3em;
-  height: 2em;
+.page-link {
+  transition: all 400ms ease-in-out;
 }
 .page-link:focus {
   overflow: hidden;
   box-shadow: none;
   z-index: 1;
 }
+.pagnmb {
+  font-weight: 300;
+}
+.inpag {
+  background-color: #e6e8eb;
+}
+
 
 /* Footer */
 .footer {
@@ -236,14 +235,8 @@ button:focus, button:active, button:hover {
   padding: 0;
 }
 
-.sidebar button:focus, .openbtn:focus, .scrollUp:focus {
-  border: none;
-}
-.sidebar button:active, .openbtn:active, .scrollUp:active {
-  border: none;
-}
 
-/* Error */
+/* Error page */
 .errorImg {
   height: 25rem;
 }
@@ -258,7 +251,8 @@ button:focus, button:active, button:hover {
   display: inline-flex;
 }
 
-/* About */
+
+/* About page */
 .avatar {
   height: 10rem;
   border-radius: 10px;
@@ -282,14 +276,18 @@ button:focus, button:active, button:hover {
   min-width: 41rem;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 14px;}
-  .sidebar button {font-size: 16px;}
-  .link {font-size: 16px;}
-}
+
 
 @media screen and (max-width: 650px){
+  .sidebar {
+    padding-top: 14px;
+  }
+  .sidebar button {
+    font-size: 16px;
+  }
+  .link {
+    font-size: 16px;
+  }
   .card {
     margin: 0 auto;
   }

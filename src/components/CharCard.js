@@ -4,7 +4,7 @@ import React from 'react';
 
 function CharCard({char}) {
 
-
+//Individual card loading spinner  
 if (char === undefined ){ 
     return  <div className="d-flex justify-content-center">
                 <div className="spinner-border" role="status">
@@ -21,13 +21,8 @@ return (
             }
             <div className="card-body">
                 <h5>{char.name}</h5>
-                {
-                    char.episode ? <h6>{char.episode}</h6> 
-                    : 
-                    char.dimension ? <h6>{char.dimension}</h6> 
-                    : 
-                    null
-                }
+                <h6>{char.episode || null}</h6>
+                <h6>{char.dimension || null}</h6> 
             </div>
         </div>
         

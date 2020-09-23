@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import {  getCharactersAction, cleanAllAction  } from '../redux/charsDuck'
+import {  getInformationAction, cleanAllAction  } from '../redux/charsDuck'
 
 
-function SearchBar({getCharactersAction, cleanAllAction, error}) {
+function SearchBar({getInformationAction, cleanAllAction, error}) {
     const [inputSearch, setTextToSearch] = useState(' ')
     
 // Input Handlers
 const inputHandler = (event) => {
     setTextToSearch(event.target.value)
+    //Start searching after 3rd char
     if(event.target.value.length >2){
-    getCharactersAction(event.target.value, 1)
+        getInformationAction(event.target.value)
     }
 }
 const doSearch = (e) => {
     e.preventDefault()
-    getCharactersAction(inputSearch, 1)
+    getInformationAction(inputSearch)
 }
 
-// Clean function
+// Clean handler
 const cleanAll = () => {
     setTextToSearch(' ')
     document.querySelector('.searchBar').reset()
@@ -26,7 +27,7 @@ const cleanAll = () => {
 }
 
 
-  return (
+return (
     <React.Fragment>
         <form className="searchBar input-group mb-3 w-25" onSubmit={doSearch} >
             <input type="text" 
@@ -39,7 +40,7 @@ const cleanAll = () => {
             />
             <div className="input-group-append">
                 <button
-                    //Enable search after third character
+                    //Enable search after 3rd character
                     disabled={inputSearch.length <= 2}                  
                     className="submitbtn btn btn-outline-secondary" 
                     type="submit" 
@@ -56,7 +57,7 @@ const cleanAll = () => {
             error? <small className="errorWeb text-danger"> Your search doesn't match to any data in any dimension</small> : null
         }
     </React.Fragment>
-  );
+    )
 }
 
 function mapState (state){
@@ -66,4 +67,4 @@ function mapState (state){
     }
 }
 
-export default connect (mapState, { getCharactersAction, cleanAllAction })(SearchBar);
+export default connect (mapState, { getInformationAction, cleanAllAction })(SearchBar);

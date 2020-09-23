@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import {getCharactersAction} from '../redux/charsDuck'
+import {getInformationAction} from '../redux/charsDuck'
 
 
-
-function Paginator( {totalPages, nextPage, prevPage, getCharactersAction, current} ) {
+function Paginator( {totalPages, nextPage, prevPage, getInformationAction, current} ) {
     const [actualPage, setActualPage] = useState()
 
+//Change page handlers
 const goBack = () =>{
-    getCharactersAction(current, prevPage)
+    getInformationAction(current, prevPage)
     setActualPage(prevPage)
     window.scrollTo({top: 0, behavior: 'smooth'})
-      
 }
-
 const goFoward = () => {
-    getCharactersAction(current, nextPage)
+    getInformationAction(current, nextPage)
     setActualPage(nextPage)
     window.scrollTo({top: 0, behavior: 'smooth'})
 }
 
- return (
-     <nav aria-label="Page navigation">
+
+return (
+    <nav aria-label="Page navigation">
         <ul className="pagination justify-content-center pagination-sm">
             <li className="page-item">
                 <button 
@@ -34,14 +33,14 @@ const goFoward = () => {
             
             {
                 prevPage===0? 
-                    null : <li className="page-item"><button className="page-link" onClick={goBack}>{prevPage}</button></li>
+                    null : <li className="page-item"><button className="page-link pagnmb" onClick={goBack}>{prevPage}</button></li>
             }
             
-            <li className="page-item"><div className="page-link"><strong>{prevPage+1}</strong></div></li>
+            <li className="page-item"><div className="page-link inpag"><strong>{prevPage+1}</strong></div></li>
             
             {
                 actualPage===totalPages || totalPages === 1?
-                    null : <li className="page-item"><button className="page-link" onClick={goFoward}>{nextPage}</button></li>
+                    null : <li className="page-item"><button className="page-link pagnmb" onClick={goFoward}>{nextPage}</button></li>
             }
 
             <li className="page-item">
@@ -58,6 +57,7 @@ const goFoward = () => {
 }
 
 function mapState (state){
+    
     return {
         current: state.characters.current,
         prevPage: state.characters.prevPage,
@@ -66,4 +66,4 @@ function mapState (state){
     }
 }
 
-export default connect (mapState, {getCharactersAction})(Paginator);
+export default connect (mapState, {getInformationAction})(Paginator);

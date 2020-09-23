@@ -24,8 +24,8 @@ export let setQuery = (filter) => {
         `)
         case "Episodes":
             return(`    
-            query($filter: FilterEpisode) {
-                episodes(filter: $filter) {
+            query($page:Int, $filter: FilterEpisode) {
+                episodes(page:$page, filter: $filter) {
                     info {
                         pages
                         next
@@ -47,8 +47,8 @@ export let setQuery = (filter) => {
         `)
         case 'Locations':
             return (`
-                query($filter: FilterLocation) {
-                locations(filter: $filter) {
+                query($page:Int, $filter: FilterLocation) {
+                locations(page:$page, filter: $filter) {
                   info {
                     pages
                     next

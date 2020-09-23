@@ -1,40 +1,43 @@
-import ApolloClient, {gql} from 'apollo-boost'   //importo ApolloClient y gql para utilizar en getCharactersAction version apollo
+import ApolloClient, {gql} from 'apollo-boost'  
+//Query set by filter 
 import {setQuery} from './queries'
 
 // constantes 
-let initialData = {             //creo una constante para el estado inicial
-    fetching : false,           //esto es para saber si estan cargando los pj o si ya cargaron
-    array: [],                  //esto contendrá la lista de pj completa
-    current: '',                //esto contendrá la búsqueda actual
-    filter: '',                 //esto contendrá el estado del filtro
-    pages: null,                //esto contendrá el total de páginas
-    nextPage: 1,                //esto contendrá el dato de la página siguiente a la que me encuentro (esto lo uso cuando uso graphql)
+let initialData = {             
+    fetching : false,           
+    array: [],                  //data recived from api
+    current: '',                //current search write in the input field
+    filter: '',                 //active filter
+    pages: null,                //total pages
+    nextPage: 1,                
     prevPage: null,
-    error: false
+    error: false                
 }
 
 let client = new ApolloClient({
-    uri : "https://rickandmortyapi.com/graphql"     //URL de la API del proyecto (cliente para apollo)
+    uri : "https://rickandmortyapi.com/graphql"     
 })
 
-let filterQuery                 //esto contendrá el query correspondiente a cada filtro
+let filterQuery                                         //will contain query structure                     
 
-let GET_CHARACTERS = "GET_CHARACTERS"                   //constante que representa la acción actual
-let GET_CHARACTERS_SUCCES = "GET_CHARACTERS_SUCCES"     //constante que representa la acción exitosa
-let GET_CHARACTERS_ERROR = "GET_CHARACTERS_ERROR"       //constante que representa la acción errónea (sea cual sea el error)
+let GET_INFORMATION = "GET_INFORMATION"                   
+let GET_INFORMATION_SUCCES = "GET_INFORMATION_SUCCES"     
+
+let GET_INFORMATION_ERROR = "GET_INFORMATION_ERROR"       
 
 let SET_FILTER = "SET_FILTER"
 let SET_CURRENT = "SET_CURRENT"
 
-let UPDATE_PREV_PAGE = "UPDATE__PREV_PAGE"              //constante que representa la actualización de página
-let UPDATE_NEXT_PAGE = "UPDATE_NEXT_PAGE"               //constante que representa la actualización de página
-let UPDATE_PAGES = "UPDATE_PAGES"                       //constante que representa la actualización de página
+let UPDATE_PREV_PAGE = "UPDATE__PREV_PAGE"              
+let UPDATE_NEXT_PAGE = "UPDATE_NEXT_PAGE"               
+let UPDATE_PAGES = "UPDATE_PAGES"                       
 let CLEAR_ARRAY = "CLEAR_ARRAY"
 let CLEAR_CURRENT = "CLEAR_CURRENT"
 
-// reducer          
-export default function reducer(state=initialData, action){     //creo un switch y le coloco al estado, el valor de initialData
+         
+export default function reducer(state=initialData, action){     
     switch(action.type){
+
         case UPDATE_NEXT_PAGE:
             return {...state, nextPage:action.payload}
 
@@ -44,20 +47,24 @@ export default function reducer(state=initialData, action){     //creo un switch
         case UPDATE_PAGES:
             return {...state, pages:action.payload}
 
+
         case SET_FILTER:
             return {...state, filter: action.payload}
 
         case SET_CURRENT:
             return {...state, current: action.payload}
 
-        case GET_CHARACTERS:
-            return {...state, fetching:true}
 
-        case GET_CHARACTERS_ERROR:
-            return {...state, fetching: false, error:action.payload}
+        case GET_INFORMATION:
+            return {...state, fetching:true}
             
-        case GET_CHARACTERS_SUCCES:                                 //en caso de exito, devuelve lo que haya en state,
-            return {...state, array:action.payload, fetching:false} //más lo que hay en array que será lo que devuelve action.payload
+        case GET_INFORMATION_SUCCES:                                 
+            return {...state, array:action.payload, fetching:false} 
+
+
+        case GET_INFORMATION_ERROR:
+            return {...state, fetching: false, error:action.payload}
+
 
         case CLEAR_ARRAY:
             return {...state, array: action.payload}
@@ -73,125 +80,124 @@ export default function reducer(state=initialData, action){     //creo un switch
 
 // actions (action creators) o thunks
 export let setFilterAction = (filterType) => (dispatch) => {
-    dispatch({                           //si es exitoso, despacho la toma de pjs exitosa
-        type: SET_FILTER,                //y mando el resultado de pjs
+    //get selected filter
+    dispatch({                           
+        type: SET_FILTER,                
         payload: filterType
     })
-    filterQuery = setQuery(filterType)
+    //take the active filter and set the query
+    filterQuery = setQuery(filterType)              
 }
 
-export let cleanAllAction = () => (dispatch, getState) => {
-    dispatch({                                      //si es exitoso, despacho la toma de pjs exitosa
-        type: CLEAR_ARRAY,                          //y mando el resultado de pjs
+export let cleanAllAction = () => (dispatch) => {
+    //clean info in array, current search and posible previous error
+    dispatch({                                      
+        type: CLEAR_ARRAY,                          
         payload: []
     })
-    dispatch({                                      //si es exitoso, despacho la toma de pjs exitosa
-        type: CLEAR_CURRENT,                        //y mando el resultado de pjs
+    dispatch({                                      
+        type: CLEAR_CURRENT,                        
         payload: ''
     })
     dispatch({                                      
-        type: GET_CHARACTERS_ERROR,                 //actualizo la busqueda actual
+        type: GET_INFORMATION_ERROR,                 
         payload: false
     })
 }
 
-export let getCharactersAction = (input, page) => (dispatch, getState) => {     //esta parte es igual: creo la función y retorno el dispatch que trae los pjs                                                            
-                                                                                //declaro el query que voy a pedirle a graphql
-                                                                                //($page:Int) es la declaración de una variable en graphql
-        let query = gql`${filterQuery}`
-        
+export let getInformationAction = (input, page) => (dispatch) => {                                                                 
 
-    //despacho GET_CHARACTERS
+        let query = gql`${filterQuery}`
+
     dispatch({                  
-        type: GET_CHARACTERS    
+        type: GET_INFORMATION    
     })
     
-    let {nextPage} = getState().characters                  //declaro una variable nextPage que contendrá la página siguiente a la que me encuentro
-    
-    return client.query({                                       //pido a mi cliente de graphql con query
-        query,                                                  //le pido mi query definido antes
-        variables: {                                            //declaro y le paso unas variables
-            page: page? page : nextPage,                        //esta variable tendrá la página siguiente a la que me encuentro
+    //query to api using inputted page and search 
+    return client.query({                                       
+        query,                                                  
+        variables: {                                            
+            page: page,                                         
             filter: {
-                name: `${input? input : ''}`
+                name: `${input || ''}`
             }
         }
     })
-    .then(({data}) => {                              //obtengo una respuesta que está en data y el error
+    .then(({data}) => {                              
         dispatch({                                      
-            type: SET_CURRENT,                              //actualizo la busqueda actual
+            type: SET_CURRENT,                              
             payload: input
         })
+        //clean any previous error
         dispatch({                                      
-            type: GET_CHARACTERS_ERROR,                              //actualizo la busqueda actual
+            type: GET_INFORMATION_ERROR,                     
             payload: false
         })
 
-        let dataPlace = Object.keys(data)[0];               //capturo el tipo de retorno del query
+        //pick object name inside data
+        let dataPlace = Object.keys(data)[0];               
         if (dataPlace === 'characters'){
             dispatch({                                          
-                type: GET_CHARACTERS_SUCCES,                    
+                type: GET_INFORMATION_SUCCES,                    
                 payload: data.characters.results
             })
-
             dispatch({                                          
                 type: UPDATE_PAGES,                              
-                payload: data.characters.info.pages ? data.characters.info.pages : 1
+                payload: data.characters.info.pages || 1
             })     
             dispatch({                                          
                 type: UPDATE_NEXT_PAGE,                              
-                payload: data.characters.info.next ? data.characters.info.next : 1
+                payload: data.characters.info.next || 1
             })      
             dispatch({                                          
                 type: UPDATE_PREV_PAGE,                              
-                payload: data.characters.info.prev ? data.characters.info.prev : 0
+                payload: data.characters.info.prev || 0
             }) 
+            return
         }
-        else if (dataPlace === 'episodes'){
+        if (dataPlace === 'episodes'){
             dispatch({                                          
-                type: GET_CHARACTERS_SUCCES,                    
+                type: GET_INFORMATION_SUCCES,                    
                 payload: data.episodes.results 
             })
-
             dispatch({                                          
                 type: UPDATE_PAGES,                              
-                payload: data.episodes.info.pages ? data.episodes.info.pages : 1
+                payload: data.episodes.info.pages || 1
             })     
             dispatch({                                          
                 type: UPDATE_NEXT_PAGE,                              
-                payload: data.episodes.info.next ? data.episodes.info.next : 1
+                payload: data.episodes.info.next || 1
             })      
             dispatch({                                          
                 type: UPDATE_PREV_PAGE,                              
-                payload: data.episodes.info.prev ? data.episodes.info.prev : 0
+                payload: data.episodes.info.prev || 0
             }) 
+            return
         }
         else {
             dispatch({                                          
-                type: GET_CHARACTERS_SUCCES,                    
+                type: GET_INFORMATION_SUCCES,                    
                 payload: data.locations.results 
             })
 
             dispatch({                                          
                 type: UPDATE_PAGES,                              
-                payload: data.locations.info.pages ? data.locations.info.pages : 1
+                payload: data.locations.info.pages || 1
             })     
             dispatch({                                          
                 type: UPDATE_NEXT_PAGE,                              
-                payload: data.locations.info.next ? data.locations.info.next : 1
+                payload: data.locations.info.next || 1
             })      
             dispatch({                                          
                 type: UPDATE_PREV_PAGE,                              
-                payload: data.locations.info.prev ? data.locations.info.prev : 0
+                payload: data.locations.info.prev || 0
             }) 
         }
-        
-
     })  
     .catch(({error})=>{
-        console.log(error);            //si hay error, despacho la toma de pjs fallida
+        console.log(error);                                 
         dispatch({
-            type: GET_CHARACTERS_ERROR,
+            type: GET_INFORMATION_ERROR,
             payload: true            
         })
         return
