@@ -1,7 +1,7 @@
 ---
 ---
 
-<h6>Hi stranger, I’m Sebastian!</h5>
+<h5>Hi stranger, I’m Sebastian!</h5>
 <h2>Welcome to this crazy little project! 👉 Rick and Morty Searcher 👈</h2>
 <p>Here you can search and find some information about the show. In a sidebar displayed by clicking or pressing a button in
 the up-left corner, you can active one of the three filters provided that will let you search by characters, locations or episodes. All information can be obtained by entering the name in the input field according to the active filter.</p>
@@ -13,18 +13,19 @@ the up-left corner, you can active one of the three filters provided that will l
 <p>Holt there!👮‍♂️ Before making any move, you need to have installed git and yarn package manager in your PC.<em>(Have the links at the end)</em>
 <ol>
 <li>
-<h6><strong>CLONE</strong></h6>
+<h5><strong>CLONE</strong></h5>
 <p>In your <code>command shell </code>enter <code>$ git clone https://github.com/Seba-Toso/rickandmorty-app.git</code> and then press ENTER.</p>
 </li>
 <li>
-<h6>JUMP INTO THE PROJECT FOLDER</h6>
+<h5>JUMP INTO THE PROJECT FOLDER</h5>
 <code>cd rickandmorty-app</code></p>
 </li>
 <li>
-<h6>INSTALL PACKAGES AND LIBRARIES</h6>
+<h5>INSTALL PACKAGES AND LIBRARIES</h5>
 <code>yarn install</code></p><br>
 </li>
-<h6>START IT UP<h6>
+<li>
+<h5>START IT UP<h5>
 <code>yarn start</code></p>
 </li>
 </ol>
