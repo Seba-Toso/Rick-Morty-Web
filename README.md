@@ -9,7 +9,7 @@ the up-left corner, you can active one of the three filters provided that will l
 <h4>You can play with it</h4>
 <p>This project is deployed in gh-pages 🙌. <a href="https://seba-toso.github.io/rickandmorty-app/" title="https://seba-toso.github.io/rickandmorty-app/">Here</a></p>
 <h4>Or follow this steps to clone the repository</h4>
-<p>Holt there!👮‍♂️ Before making any move, you need to have installed git and yarn package manager in your PC.<em>(Have the links at the end)</em>
+<p>Hold there!👮‍♂️ Before making any move, you need to have installed git and yarn package manager in your PC.<em>(Have the links at the end)</em>
 <ol>
 <li>
 <h5><strong>CLONE</strong></h5>
