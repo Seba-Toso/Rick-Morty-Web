@@ -13,7 +13,7 @@ the up-left corner, you can active one of the three filters provided that will l
 <ol>
 <li>
 <h5><strong>CLONE</strong></h5>
-<p>In your <code>command shell </code>enter <code>$ git clone https://github.com/Seba-Toso/rickandmorty-app.git</code> and then press ENTER.</p>
+<p>Enter <code>$ git clone https://github.com/Seba-Toso/rickandmorty-app.git</code> in your <code>command shell </code>and then press ENTER.</p>
 </li>
 <li>
 <h5>JUMP INTO THE PROJECT FOLDER</h5>
