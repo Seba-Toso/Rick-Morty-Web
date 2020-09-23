@@ -22,7 +22,7 @@ the up-left corner, you can active one of the three filters provided that will l
 </li>
 <li>
 <h5>INSTALL PACKAGES AND LIBRARIES</h5>
-<code>yarn install</code></p><br>
+<code>yarn install</code></p>
 </li>
 <li>
 <h5>START IT UP<h5>
