@@ -28,6 +28,7 @@ const setFilter = (event) => {
     cleanAllAction()
 }
 
+console.log( useLocation().pathname);
 
   return (
     <React.Fragment>
@@ -37,14 +38,14 @@ const setFilter = (event) => {
         </div>  
         <div id="mySidebar" className="sidebar">
         {
-            useLocation().pathname === '/rickandmorty-app/' ?
+            useLocation().pathname === '/rickandmorty-app' ?
             <div>
                 <button id="Characters" onClick={setFilter}>Character</button>
                 <button id="Locations" onClick={setFilter}>Location</button>
                 <button id="Episodes" onClick={setFilter}>Episode</button>
             </div>
             :
-            <button><Link className="link" to="/rickandmorty-app/">Home</Link></button> 
+            <button><Link className="link" to="/rickandmorty-app">Home</Link></button> 
         }
             <button><Link className="link" to="/about">About</Link></button>
         </div>

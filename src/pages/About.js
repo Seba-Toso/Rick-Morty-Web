@@ -12,7 +12,7 @@ return (
 
                 <h5>About me</h5>
                 <div className="aboutContainer">
-                <p>Hi! my name is Sebastian, i'm from Argentina.<br/>
+                <p>Hi! my name is Sebastian, I'm from Argentina.<br/>
                 I'm a Trainee/Jr Front-end developer that tries to enter to this beautiful work world. <br/>
                 </p>
                 </div>

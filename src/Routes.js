@@ -8,7 +8,7 @@ import Error from './pages/Error'
 export default function Routes() {
     return (                                                            
         <Switch> 
-            <Route exact path="/rickandmorty-app/" component={Home} />            
+            <Route exact path="/rickandmorty-app" component={Home} />            
             <Route path="/about" component={About} />
             <Route path="*" component={Error} /> 
         </Switch>
