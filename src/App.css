@@ -163,16 +163,20 @@ button:focus, button:active, button:hover {
   font-size: 1rem;
   padding: 0.5rem;
 }
-
+.miniCards .card-header {
+  padding: 0;
+}
 
 /* Details */
 .detailImg {
   border-radius: 5px;
   border: 1px solid #111;
+  
 }
 .modal-lg {
   max-width: 840px;
 }
+
 
 /* Paginator */
 .pagination {
@@ -304,6 +308,14 @@ button:focus, button:active, button:hover {
   .results {
     margin-bottom: 15%;
   }
+  .detailImg {
+    width: inherit;
+    height: auto;
+  }
+  .detailsCol{
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
   .errorWeb {
     display: none;
   }
@@ -319,4 +331,10 @@ button:focus, button:active, button:hover {
     padding-left: 1%;
     min-width: 21rem;
   }
+  .miniCards {
+    width: 45%;
+    margin-right: 3%!important;
+    display: inline-flex;
+  }
+
 }

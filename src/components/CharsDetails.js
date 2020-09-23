@@ -17,7 +17,7 @@ return (
                     </div>
                     <div className="modal-body container">
                         <div className="row">
-                            <div className="col-4">
+                            <div className="detailsCol col-4">
                                 {
                                 details.species?  (
                                     <div> 
@@ -38,7 +38,7 @@ return (
                                         </div> 
                                 }
                             </div>
-                            <div className="col-8 text-center">
+                            <div className="detailsCol col-8 text-center">
                             {
                                 details.image? <img className="detailImg" src={details.image} height='250' alt={details.name} /> 
                                 :
