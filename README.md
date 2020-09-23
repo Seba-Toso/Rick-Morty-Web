@@ -13,11 +13,11 @@ the up-left corner, you can active one of the three filters provided that will l
 <p>Holt there!👮‍♂️ Before making any move, you need to have installed git and yarn package manager in your PC.<em>(Have the links at the end)</em>
 <ol>
 <li>
-<h6><strong>CLONE</strong></h6><br>
+<h6><strong>CLONE</strong></h6>
 <p>In your <code>command shell </code>enter <code>$ git clone https://github.com/Seba-Toso/rickandmorty-app.git</code> and then press ENTER.</p>
 </li>
 <li>
-<h6>JUMP INTO THE PROJECT FOLDER</h6><br>
+<h6>JUMP INTO THE PROJECT FOLDER</h6>
 <code>cd rickandmorty-app</code></p>
 </li>
 <li>
