@@ -149,6 +149,15 @@ button:focus, button:active, button:hover {
 		transform: translatey(0);
 	}
 }
+.card-header {
+  padding: 0;
+}
+.card-header img {
+  height: 100% !important;
+}
+.card-body {
+  min-height: 6rem;
+}
 .miniCards {
   width: 30%;
   margin-right: 3%;
@@ -290,9 +299,6 @@ button:focus, button:active, button:hover {
   }
   .card {
     margin: 0 auto;
-  }
-  .resCard img {
-    height: 100% !important;
   }
   .search {
     text-align: right;
