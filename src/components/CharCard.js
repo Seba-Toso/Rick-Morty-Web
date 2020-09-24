@@ -16,11 +16,13 @@ if (char === undefined ){
 return (
     <React.Fragment>
         <div className="resCard card text-dark border-dark mb-3" >
-            {
-                char.image? <img src={char.image} height='250' width='100%' alt={char.name} /> : null
-            }
-            <div className="card-body">
-                <h5>{char.name}</h5>
+            <div className="card-header" >    
+                {
+                    char.image? <img src={char.image} height='250' width='100%' alt={char.name} /> : null
+                }
+            </div>
+            <div className="card-body text-center">
+                <h5><strong>{char.name}</strong></h5>
                 <h6>{char.episode || null}</h6>
                 <h6>{char.dimension || null}</h6> 
             </div>
