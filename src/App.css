@@ -359,7 +359,7 @@ button:focus, button:active, button:hover {
 
 }
 
-@media screen and (max-width: 736px){
+@media screen and (max-width: 720px){
   .container, .container-sm {
     max-width: 570px;
   }
