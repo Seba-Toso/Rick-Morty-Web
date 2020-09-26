@@ -304,6 +304,7 @@ button:focus, button:active, button:hover {
     display: inline-flex;
     margin-bottom: 2%;
     margin-top: 2%;
+    justify-content: center;
   }
   .card-header img {
     display: block;
