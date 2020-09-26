@@ -302,6 +302,8 @@ button:focus, button:active, button:hover {
   }
   .cardCol{
     display: grid;
+    margin-bottom: 2%;
+    margin-top: 2%;
   }
   .card-header img {
     display: block;
