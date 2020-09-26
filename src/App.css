@@ -307,6 +307,9 @@ button:focus, button:active, button:hover {
     display: block;
     height: auto;
   }
+  .launchModal{
+    display: flow-root;
+  }
   .search {
     text-align: right;
     margin-right: 3%;
