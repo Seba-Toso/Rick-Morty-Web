@@ -300,6 +300,9 @@ button:focus, button:active, button:hover {
   .card {
     margin: 0 auto;
   }
+  .cardCol{
+    display: block;
+  }
   .card-header img {
     display: block;
     height: auto;
