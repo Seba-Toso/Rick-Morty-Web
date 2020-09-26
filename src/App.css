@@ -307,8 +307,8 @@ button:focus, button:active, button:hover {
     display: block;
     height: auto;
   }
-  .launchModal{
-    display: flow-root;
+  .card-body {
+    display: block;
   }
   .search {
     text-align: right;
