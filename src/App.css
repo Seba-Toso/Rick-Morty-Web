@@ -149,6 +149,9 @@ button:focus, button:active, button:hover {
 		transform: translatey(0);
 	}
 }
+.modalLauncher:hover {
+  text-decoration: none;
+}
 .card-header {
   padding: 0;
 }
@@ -296,6 +299,9 @@ button:focus, button:active, button:hover {
   }
   .link {
     font-size: 16px;
+  }
+  .modalLauncher {
+    display: block;
   }
   .card {
     margin: 0 auto;
