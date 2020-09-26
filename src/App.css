@@ -301,14 +301,11 @@ button:focus, button:active, button:hover {
     margin: 0 auto;
   }
   .cardCol{
-    display: inline-block;
+    display: grid;
   }
   .card-header img {
     display: block;
     height: auto;
-  }
-  .card-body {
-    display: block;
   }
   .search {
     text-align: right;
