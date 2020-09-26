@@ -129,7 +129,7 @@ button:focus, button:active, button:hover {
 
 /* Card */
 .resCard {
-  min-width: 13rem;
+  min-width: 15.7rem;
   min-height: 8rem;
   max-width: 18rem;
   transition: all 200ms ease-in-out ;
@@ -297,6 +297,9 @@ button:focus, button:active, button:hover {
   .link {
     font-size: 16px;
   }
+  .resCard {
+    min-width: 18rem;
+}
   .card {
     margin: 0 auto;
   }
