@@ -303,11 +303,6 @@ button:focus, button:active, button:hover {
   .cardCol{
     display: inline-block;
   }
-  .modalLauncher {
-    margin-bottom: 1%;
-    height: 100%;
-    display: flex;
-  }
   .card-header img {
     display: block;
     height: auto;
