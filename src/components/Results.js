@@ -39,9 +39,9 @@ return (
                     chars.map(element => {
                         return (
                             <div className="col cardCol" key={element.id}> 
-                                <div data-toggle="modal" data-target={"#Modal"+element.id} type="button">
+                                <a data-toggle="modal" data-target={"#Modal"+element.id} type="button">
                                     <CharCard char={element} /> 
-                                </div>
+                                </a>
                                 <CharsDetails details={element} />  
                             </div>
                         )
