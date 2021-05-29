@@ -18,7 +18,7 @@ export default function generateStore(){
 
            
     //after create store, put character as default filter                                                        
-    setFilterAction('Characters')(store.dispatch, store.getState)   
+    setFilterAction('Characters')(store.dispatch, store.getState )   
                                                                                                                              
     return store
 }

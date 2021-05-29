@@ -6,6 +6,11 @@ import {Link, useLocation} from 'react-router-dom'
 
 function Sidebar({setFilterAction, cleanAllAction}) {
     const [visibility, setVisibility] = useState(false);
+    const [activeFilters, setActiveFilters] = useState({
+        characters: true,
+        locations: false,
+        episodes: false
+    })
 
 // Show/Hide handler
 function toggleSidebar () {
@@ -23,8 +28,13 @@ function toggleSidebar () {
 }
 // Search Filter handler
 const setFilter = (event) => {
-    let filter = event.target.id
-    setFilterAction(filter)
+    let clickedButton = event.target.id
+    setActiveFilters({
+        characters: clickedButton === 'Characters' ? true : false, 
+        locations: clickedButton === 'Locations' ? true : false, 
+        episodes: clickedButton === 'Episodes' ? true : false
+    })
+    setFilterAction(clickedButton)
     cleanAllAction()
 }
 
@@ -37,16 +47,16 @@ return (
             </div>  
             <div id="mySidebar" className="sidebar">
                 {   //duplicate Home path for resolving problems with gh-pages
-                    useLocation().pathname === ('/rickandmorty-app' || '/rickandmorty-app/') ?
+                    useLocation().pathname === ('/') ?
                     <div>
-                        <button id="Characters" onClick={setFilter}>Character</button>
-                        <button id="Locations" onClick={setFilter}>Location</button>
-                        <button id="Episodes" onClick={setFilter}>Episode</button>
+                        <button id="Characters" onClick={setFilter} className={activeFilters.characters? 'active' : ''}>Character</button>
+                        <button id="Locations" onClick={setFilter} className={activeFilters.locations? 'active' : ''}>Location</button>
+                        <button id="Episodes" onClick={setFilter} className={activeFilters.episodes? 'active' : ''}>Episode</button>
                     </div>
                     :
-                    <button><Link className="link" to="/rickandmorty-app">Home</Link></button> 
+                    <button><Link className="link" to="/">Home</Link></button> 
                 }
-                <button><Link className="link" to="/about">About</Link></button>
+                {useLocation().pathname === ('/') && <button><Link className="link" to="/about">About</Link></button>}
             </div>
         </div>
     </React.Fragment>
