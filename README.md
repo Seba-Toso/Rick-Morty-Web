@@ -6,7 +6,7 @@
 <p>Here you can search and find some information about the show. A sidebar will be displayed if you click or tap the button in the upper-left corner, you can activate one of the three filters provided, which will allow you to search by character name, location, or episode. All the relevant information can be obtained by entering the name in the input field depending on the active filter.</p>
 
 <h4>You can even play with it</h4>
-<p>This project was deployed in gh-pages 🙌. <a href="https://seba-toso.github.io/rickandmorty-app/" title="https://seba-toso.github.io/rickandmorty-app/">Here</a></p>
+<p>This project was deployed in gh-pages 🙌. <a href="https://rickandmortydatafinder.netlify.app/" title="https://rickandmortydatafinder.netlify.app/">Here</a></p>
 <h4>Or follow these  steps to clone the repository</h4>
 <p>Whoa, hold on!👮‍♂️ Before you make a move, you need to have git and yarn package manager installed on your PC.<em>(You may find the links at the bottom)</em>
 <ol>
